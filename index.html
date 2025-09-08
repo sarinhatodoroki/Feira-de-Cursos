@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apresentação do Jogo da Memória Dev Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Potta One', cursive;
+      background: url('fundo.gif');
+      margin: 0;
+      padding: 20px;
+      color: #e0e7ff; /* branco azulado */
+      text-shadow: 1px 1px 2px #6b21a8; /* sombra roxa escura */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      display: none;
+      max-width: 800px;
+      background: rgba(30, 18, 60, 0.85); /* roxo escuro translúcido */
+      border: 2px solid #7c3aed; /* roxo vibrante */
+      border-radius: 15px;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      box-shadow: 0 0 20px #7c3aedaa;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    /* Espaço para imagem no topo do slide */
+    .slide-image {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      margin: 0 auto 25px auto;
+      
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a78bfa;
+      font-size: 1.2rem;
+      user-select: none;
+    }
+
+    .slide-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #a78bfa; /* lilás claro */
+      text-shadow:
+        2px 2px 3px #5b21b6, /* roxo escuro */
+        0 0 25px #a78bfa,
+        0 0 5px black;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p, ul {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #e0e7ff; /* branco azulado */
+      text-shadow: 1px 1px 2px #4c1d95;
+    }
+
+    ul {
+      text-align: left;
+      list-style-type: disc;
+      padding-left: 40px;
+    }
+
+    button {
+      background: rgba(124, 58, 237, 0.8); /* roxo vibrante */
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin: 0 10px;
+      box-shadow: 0 0 10px #7c3aedcc;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      background: rgba(124, 58, 237, 1);
+      transform: scale(1.05);
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      p, ul {
+        font-size: 1rem;
+      }
+      .slide {
+        padding: 20px 25px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+      .slide-image {
+        height: 180px;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="slide active" id="slide-1">
+    <div class="slide-image">
+      <!-- Coloque sua imagem aqui, tamanho recomendado: 600x300 px -->
+      <!-- Exemplo: <img src="sua-imagem1.jpg" alt="Descrição da imagem do slide 1" /> -->
+      <img src="1.jpeg" alt="Descrição da imagem do slide 1" />
+    </div>
+    <h1>Jogo da Memória Dev Edition</h1>
+    <p>Uma jornada interativa rumo ao conhecimento em desenvolvimento de software.</p>
+  </section>
+
+  <section class="slide" id="slide-2">
+    <div class="slide-image">
+      <img src="2.jpeg" alt="Descrição da imagem do slide 1" />
+    </div>
+    <h2>Introdução</h2>
+    <p>
+      O <strong>Jogo da Memória Dev Edition</strong> é um projeto especial que combina diversão com aprendizado, focado em ensinar conceitos importantes do mundo do desenvolvimento de software. Este jogo permite aprender termos técnicos de programação enquanto se joga um clássico jogo da memória, transformando o aprendizado em uma experiência interativa e envolvente.
+    </p>
+  </section>
+
+  <section class="slide" id="slide-3">
+    <div class="slide-image">
+      <img src="3.jpeg" alt="Descrição da imagem do slide 1" />
+    </div>
+    <h2>As Tecnologias Web Básicas</h2>
+    <p><strong>HTML:</strong> é a estrutura básica do jogo, como o esqueleto de uma construção. Define onde cada elemento ficará posicionado — título, tabuleiro, cartas e informações do jogador.</p>
+    <p><strong>CSS:</strong> responsável pela aparência visual do jogo, funcionando como a decoração e pintura de uma casa. Define cores, fontes, efeitos visuais e garante responsividade.</p>
+    <p><strong>JavaScript:</strong> a inteligência do jogo, gerenciando a lógica, verificação de pares, cronômetro, níveis e embaralhamento das cartas.</p>
+  </section>
+
+  <section class="slide" id="slide-4">
+    <div class="slide-image">
+      <img src="4.jpeg" alt="Descrição da imagem do slide 1" />
+    </div>
+    <h2>Como o Jogo Funciona</h2>
+    <p>
+      O jogo apresenta cartas com conceitos de programação de um lado e definições do outro. O jogador deve encontrar os pares corretos entre termos e explicações.
+    </p>
+    <p>
+      Conforme o jogador avança, os níveis ficam mais desafiadores, com mais cartas para memorizar. Um cronômetro registra o tempo gasto em cada fase, permitindo acompanhar o progresso e tentar superar recordes.
+    </p>
+    <ul>
+      <li>Cartas com termos técnicos e definições.</li>
+      <li>Níveis progressivamente mais difíceis.</li>
+      <li>Cronômetro para medir desempenho.</li>
+      <li>Aprendizado natural dos conceitos.</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="slide-5">
+    <div class="slide-image">
+      <img src="5.jpeg" alt="Descrição da imagem do slide 1" />
+    </div>
+    <h2>Benefícios Educacionais</h2>
+    <p>
+      O jogo transforma o aprendizado técnico em uma experiência lúdica, associando conceitos a uma atividade prazerosa, facilitando a retenção do conhecimento.
+    </p>
+    <p>
+      A abordagem por níveis permite que iniciantes comecem com conceitos básicos e avancem para temas mais complexos, construindo conhecimento de forma estruturada.
+    </p>
+    <p>
+      O feedback imediato reforça o aprendizado correto e corrige equívocos em tempo real.
+    </p>
+  </section>
+
+  <section class="slide" id="slide-6">
+    <div class="slide-image">
+      <img src="6.jpeg" alt="Descrição da imagem do slide 1" />
+    </div>
+    <h2>Aplicação e Relevância</h2>
+    <p>
+      Em um mundo cada vez mais digital, entender conceitos básicos de programação é uma habilidade valiosa, mesmo para não desenvolvedores profissionais.
+    </p>
+    <p>
+      O jogo serve como porta de entrada acessível para esse universo, democratizando o conhecimento técnico.
+    </p>
+    <p>
+      Educadores podem usar em salas de aula para introduzir tecnologia de forma engajadora, e empresas em treinamentos para funcionários não técnicos.
+    </p>
+  </section>
+
+  <section class="slide" id="slide-7">
+    <div class="slide-image">
+      <img src="7.jpeg" alt="Descrição da imagem do slide 1" />
+    </div>
+    <h2>Conclusão</h2>
+    <p>
+      O <strong>Jogo da Memória Dev Edition</strong> exemplifica como a tecnologia pode criar experiências educacionais eficazes e agradáveis.
+    </p>
+    <p>
+      Combinando HTML, CSS e JavaScript, transforma o aprendizado técnico em uma atividade divertida e memorável, provando que educação e entretenimento podem andar juntos.
+    </p>
+  </section>
+
+  <section class="slide" id="slide-5">
+    <div class="slide-image">
+      <img src="qrcode.png" alt="Descrição da imagem do slide 1" />
+    </div>
+    <h2>Jogo da Memória</h2>
+    <p>
+      QR CODE DO JOGO
+    </p>
+  </section>
+
+  <div class="nav-buttons">
+    <button id="prevBtn" aria-label="Slide anterior">Anterior</button>
+    <button id="nextBtn" aria-label="Próximo slide">Próximo</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      current = index;
+      updateButtons();
+    }
+
+    function updateButtons() {
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === slides.length - 1;
+      prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+      nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+      prevBtn.style.cursor = prevBtn.disabled ? 'default' : 'pointer';
+      nextBtn.style.cursor = nextBtn.disabled ? 'default' : 'pointer';
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) showSlide(current - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (current < slides.length - 1) showSlide(current + 1);
+    });
+
+    // Navegação por teclado
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' && current < slides.length - 1) {
+        showSlide(current + 1);
+      } else if (e.key === 'ArrowLeft' && current > 0) {
+        showSlide(current - 1);
+      }
+    });
+
+    // Inicializa estado dos botões
+    updateButtons();
+  </script>
+</body>
+</html>
